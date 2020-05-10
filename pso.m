@@ -73,17 +73,7 @@ else
             nb_bad = numel(bad_idx);
             
         end
-        
     end
-    
-%     % Make sure the initial positions array dimensions are coherent with the number of agents and objective function dimensions
-%     assert(numel(initial_positions) == 2*nb_dim, 'ERROR: Invalid input initial positions bounds');
-%     
-%     positions =  ones(nb_particles, nb_dim);
-%     for i = 1 : nb_dim
-%         positions(:,i) = initial_positions(2*i-1) * positions(:,i) + rand(nb_particles, 1) * (initial_positions(2*i)-initial_positions(2*i-1));
-%     end
-    
 end
 
 %% Initialization
@@ -171,6 +161,7 @@ end
 
 %% Output
 
-output = first_hitting_time;
+output.first_hitting_time = first_hitting_time;
+output.positions_history = positions_history;
 
 end
